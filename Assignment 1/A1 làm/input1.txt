@@ -1,0 +1,42 @@
+BEGIN
+
+DISP: 1
+AGING_INTERVAL: 5
+
+END
+
+PID: p1
+ArrTime: 0
+SrvTime: 10
+Priority: 0
+END
+
+PID: p2
+ArrTime: 0
+SrvTime: 1
+Priority: 2
+END
+
+PID: p3
+ArrTime: 0
+SrvTime: 2
+Priority: 4
+END
+
+PID: p4
+ArrTime: 0
+SrvTime: 1
+Priority: 1
+END
+
+PID: p5
+ArrTime: 0
+SrvTime: 5
+Priority: 5
+END
+
+
+
+
+
+EOF

@@ -1,0 +1,69 @@
+FCFS:
+T3: p1
+T14: p2
+T16: p3
+T19: p4
+T21: p5
+
+Process  Turnaround Time  Waiting Time
+p1       11               1           
+p2       13               12          
+p3       12               10          
+p4       10               9           
+p5       12               7           
+
+NRR:
+T3: p1
+T8: p2
+T10: p3
+T13: p1
+T17: p4
+T19: p5
+T24: p1
+T27: p5
+T29: p1
+
+Process  Turnaround Time  Waiting Time
+p1       28               18          
+p2       7                6           
+p3       6                4           
+p4       8                7           
+p5       14               9           
+
+HRRN:
+T3: p1
+T14: p2
+T16: p4
+T18: p3
+T21: p5
+
+Process  Turnaround Time  Waiting Time
+p1       11               1           
+p2       13               12          
+p3       14               12          
+p4       7                6           
+p5       12               7           
+
+PAP:
+T3: p2
+T5: p1
+T7: p3
+T10: p1
+T12: p4
+T14: p1
+T16: p5
+T22: p1
+
+Process  Turnaround Time  Waiting Time
+p1       27               17          
+p2       2                1           
+p3       3                1           
+p4       3                2           
+p5       7                2           
+
+Summary
+Algorithm  Average Turnaround Time  Waiting Time
+FCFS       11.60                    7.80        
+NRR        12.60                    8.80        
+HRRN       11.40                    7.60        
+PAP        8.40                     4.60   
