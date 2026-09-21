@@ -50,9 +50,9 @@ public class CPU {
     }
 
     /*
-    If the running process has just reached remainingTime == 0, remove it
-    from the CPU, compute its final turnaround/waiting time, and record
-    it as finished.
+    If the running process's remainingTime has reached 0, remove it from
+    the CPU, compute its final turnaround/waiting time, and record it as
+    finished.
     */
     public void finish() {
         if (!runningQueue.isEmpty() && runningQueue.getFirst().getRemainingTime() == 0) {
@@ -82,9 +82,9 @@ public class CPU {
     }
 
     /*
-    Moves process p from readyQueue onto the CPU. This costs `disp`
-    (dispatcher) time units, and is logged so the final schedule trace
-    can be printed.
+    Moves process p from readyQueue onto the CPU, advancing the clock by
+    p's dispatch overhead (getDisp()). The move is logged so the final
+    schedule trace can be printed.
     */
     public void dispatcher(Process p) {
         readyQueue.remove(p);
@@ -128,6 +128,7 @@ public class CPU {
         return log;
     }
 
+    // linear search over allProcesses; fine at assignment scale (small process counts)
     private Process findByPid(int pid) {
         for (Process p : allProcesses) {
             if (p.getPid() == pid) return p;
