@@ -1,13 +1,15 @@
 import java.util.*;
 
 /*
-CPU acts as the shared simulation engine. It holds the four queues from
-the classic process states (new, ready, running, then finished) and
-exposes the primitive operations (admit, dispatch, run, preempt, finish)
-that every scheduling algorithm builds on top of. The CPU itself makes no
-scheduling decisions; it just tracks state and time, while each Scheduler
-subclass decides which process to pick, and the CPU just carries out
-that choice.
+CPU is the shared simulation engine. It holds the four queues that
+correspond to the classic process states (new -> ready -> running ->
+finished) and exposes the primitive operations (admit, dispatcher, run,
+preempt, finish) that every scheduling algorithm is built from.
+
+CPU never decides which process runs next - it has no scheduling policy
+of its own. Each Scheduler subclass picks a process from the ready queue
+according to its own algorithm; CPU only tracks time and moves processes
+between queues to carry out that choice.
 */
 public class CPU {
     private List<Process> allProcesses; // used to look up a process by pid after simulation
